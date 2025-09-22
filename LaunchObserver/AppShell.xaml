@@ -3,12 +3,28 @@
     x:Class="LaunchObserver.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:LaunchObserver"
+    xmlns:views="clr-namespace:LaunchObserver.Views"
     Title="LaunchObserver">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <Tab Title="Home" Icon="dotnet_bot.png">
+            <ShellContent
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="MainPage" />
+        </Tab>
+        <Tab Title="Launches" Icon="dotnet_bot.png">
+            <ShellContent
+            ContentTemplate="{DataTemplate views:LaunchesPage}"
+            Route="LaunchesPage" />
+        </Tab>
+        <Tab Title="Settings" Icon="dotnet_bot.png">
+            <ShellContent
+            ContentTemplate="{DataTemplate views:SettingsPage}"
+            Route="SettingsPage" />
+        </Tab>
+    </TabBar>
+    
+    <ShellContent Title="Details"
+        ContentTemplate="{DataTemplate views:DetailsPage}"
+        Route="DetailsPage" />
 </Shell>
