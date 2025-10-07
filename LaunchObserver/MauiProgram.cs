@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using LaunchObserver.Controllers;
+using LaunchObserver.Services;
+using Microsoft.Extensions.Logging;
 
 namespace LaunchObserver
 {
@@ -18,6 +20,9 @@ namespace LaunchObserver
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<APIService>();
+            builder.Services.AddSingleton<LaunchController>();
 
             return builder.Build();
         }

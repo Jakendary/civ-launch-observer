@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LaunchObserver.Services;
+using LaunchObserver.Models;
 
 namespace LaunchObserver.Controllers
 {
-    class LaunchController
+    public class LaunchController
     {
+        private readonly APIService _apiService;
+
+        public LaunchController(APIService apiService)
+        {
+            _apiService = apiService;
+        }
+
+        public Task<Launch> GetNextLaunchAsync()
+        {
+            return _apiService.GetNextLaunchAsync();
+        }
     }
 }

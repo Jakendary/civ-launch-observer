@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LaunchObserver.Views.MainPage">
 
-    <Grid RowDefinitions="15*,55*,30*">
+    <Grid RowDefinitions="15*,35*,35*,15*">
         <Label Grid.Row="0" Text="Launch Observer" BackgroundColor="Blue"
                HorizontalTextAlignment="Center"/>
-        <Label Grid.Row="1" Text="Row2"/>
-        <Label Grid.Row="2" Text="Row3"/>
+        <Label x:Name="NextLaunchName" Grid.Row="1" Text="Row2"/>
+        <Image x:Name="NextLaunchImage" Grid.Row="2"/>
+        <Label Grid.Row="3" Text="Row3"/>
     </Grid>
 </ContentPage>
