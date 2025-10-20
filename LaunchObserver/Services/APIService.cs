@@ -20,7 +20,7 @@ namespace LaunchObserver.Services
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                //something went wrong
+                throw new HttpRequestException("Error");
             }
 
             string responseString = await response.Content.ReadAsStringAsync();
