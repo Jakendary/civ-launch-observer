@@ -29,5 +29,71 @@ namespace LaunchObserver.Services
 
             return responseData?.Results?[0] ?? new Launch();
         }
+
+        public async Task<List<Launch>> GetUpcomingLaunchesAsync()
+        {
+            string url = $"{base_url}launches/upcoming/";
+
+            HttpClient client = new();
+
+            HttpRequestMessage request = new(HttpMethod.Get, url);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new HttpRequestException("Error");
+            }
+
+            string responseString = await response.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<Launch.LaunchResponse>(responseString);
+
+            return responseData?.Results ?? new List<Launch>();
+        }
+
+        public async Task<List<Launch>> GetPreviousLaunchesAsync()
+        {
+            string url = $"{base_url}launches/previous/";
+
+            HttpClient client = new();
+
+            HttpRequestMessage request = new(HttpMethod.Get, url);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new HttpRequestException("Error");
+            }
+
+            string responseString = await response.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<Launch.LaunchResponse>(responseString);
+
+            return responseData?.Results ?? new List<Launch>();
+        }
+
+        public async Task<Launch> GetLaunchDetailsAsync(string launch_id)
+        {
+            string url = $"{base_url}launches/{launch_id}/";
+
+            HttpClient client = new();
+
+            HttpRequestMessage request = new(HttpMethod.Get, url);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                throw new HttpRequestException("Error");
+            }
+
+            string responseString = await response.Content.ReadAsStringAsync();
+
+            var launch = JsonConvert.DeserializeObject<Launch>(responseString);
+
+            return launch;
+        }
     }
 }
