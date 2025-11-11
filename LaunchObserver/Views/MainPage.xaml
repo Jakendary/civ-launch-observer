@@ -3,34 +3,73 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LaunchObserver.Views.MainPage">
 
-    <Grid RowDefinitions="10*,7*,35*,20*">
+    <Grid RowDefinitions="10*,5*,37*,20*">
         <Grid Grid.Row="0" BackgroundColor="Blue">
-            <Image Source="launchobserver_logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="70"/>
+            <Image Source="launchobserver_logo.png" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   HeightRequest="70"/>
         </Grid>
 
         <Grid Grid.Row="1" BackgroundColor="LightGrey">
-            <Label Grid.Row="1" Text="Next Launch:" VerticalOptions="End" Margin="25,0,25,5" FontSize="18" FontAttributes="Bold,Italic"/>
+            <Label Grid.Row="1" 
+                   Text="Next Launch:" 
+                   VerticalOptions="End" 
+                   Margin="25,0,25,5" 
+                   FontSize="18" 
+                   FontAttributes="Bold,Italic"/>
         </Grid>
         
         <Grid Grid.Row="2" BackgroundColor="LightGrey">
-            <Border Grid.Row="1" BackgroundColor="White" Stroke="Black" StrokeThickness="2" Margin="25,0,25,20"
-                HorizontalOptions="Center">
+            <Border Grid.Row="1" 
+                    BackgroundColor="White" 
+                    Stroke="Black" 
+                    StrokeThickness="2" 
+                    Margin="25,0,25,20"
+                    HorizontalOptions="Center">
+                
                 <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
-                    <Image Grid.Row="0" x:Name="NextLaunchImage" Source="launch_placeholder_image.png" HorizontalOptions="Center"/>
-                    <Label Grid.Row="1" x:Name="NextLaunchName" Text="" FontSize="22" Padding="10,10,10,0" HorizontalOptions="Center" 
+                    <Image Grid.Row="0" 
+                           x:Name="NextLaunchImage" 
+                           Source="launch_placeholder_image.png" 
+                           HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" 
+                           x:Name="NextLaunchName" 
+                           Text="" FontSize="22" 
+                           Padding="10,10,10,0" 
+                           HorizontalOptions="Center" 
                            FontAttributes="Bold"/>
-                    <Label Grid.Row="2" x:Name="NextLaunchTime" Text="No launch found, please try again later." FontSize="18" 
-                           Padding="10,0,10,0" HorizontalOptions="Center"/>
-                    <Label Grid.Row="3" x:Name="NextLaunchStatus" Text="" FontSize="22" Padding="10,25,10,0" HorizontalOptions="Center" 
-                           FontAttributes="Bold" TextColor="Green"/>
+                    <Label Grid.Row="2" 
+                           x:Name="NextLaunchTime" 
+                           Text="No launch found, please try again later." 
+                           FontSize="18" 
+                           Padding="10,0,10,0" 
+                           HorizontalOptions="Center"/>
+                    <Label Grid.Row="3" 
+                           x:Name="NextLaunchStatus" 
+                           Text="" FontSize="22" 
+                           Padding="10,25,10,0" 
+                           HorizontalOptions="Center" 
+                           FontAttributes="Bold" 
+                           TextColor="Green"/>
                 </Grid>
             </Border>
         </Grid>
-
+        
         <Grid Grid.Row="3" BackgroundColor="LightGrey">
-            <Border Grid.Row="1" BackgroundColor="White" Stroke="Black" StrokeThickness="2" Margin="25,40,25,40">
-                <Label Grid.Row="3" x:Name="NextLaunchCountdown" Text="T-00:00:00" FontSize="46" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Border Grid.Row="1" 
+                    BackgroundColor="White" 
+                    Stroke="Black" 
+                    StrokeThickness="2" 
+                    Margin="25,40,25,40">
+                <Label Grid.Row="3" 
+                       x:Name="NextLaunchCountdown" 
+                       Text="T-00:00:00" 
+                       FontSize="46" 
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center"/>
             </Border>
         </Grid>
+        
     </Grid>
 </ContentPage>
