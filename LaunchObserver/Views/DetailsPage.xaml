@@ -1,12 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LaunchObserver.Views.DetailsPage"
-             Title="DetailsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="LaunchObserver.Views.DetailsPage">
+
+    <ScrollView>
+        <Grid BackgroundColor="LightGrey">
+            <Border Grid.Row="1" 
+                    BackgroundColor="White" 
+                    Stroke="Black" 
+                    StrokeThickness="2" 
+                    Margin="25,20,25,20"
+                    HorizontalOptions="Center">
+
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                    <Image Grid.Row="0" 
+                           x:Name="SelectedLaunchImage" 
+                           Source="launch_placeholder_image.png" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="1" 
+                           x:Name="SelectedLaunchName" 
+                           Text="" FontSize="22" 
+                           Padding="10,10,10,0" 
+                           HorizontalOptions="Center" 
+                           FontAttributes="Bold"/>
+
+                    <Label Grid.Row="2" 
+                           x:Name="SelectedLaunchTime" 
+                           Text="" 
+                           FontSize="16" 
+                           Padding="10,0,10,0" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="3" 
+                           x:Name="SelectedLaunchProvider" 
+                           FontSize="15" 
+                           Padding="10,0,10,5"
+                           FontAttributes="Bold"/>
+
+                    <Label Grid.Row="4" 
+                           x:Name="SelectedLaunchPad" 
+                           FontSize="15" 
+                           Padding="10,0,10,5"
+                           FontAttributes="Bold"/>
+
+                    <Label Grid.Row="5"
+                           x:Name="MissionDetailsTitle"
+                           FontSize="15"
+                           Padding="10,0,10,0"
+                           FontAttributes="Bold"/>
+
+                    <Label Grid.Row="6" 
+                           x:Name="SelectedLaunchDescription" 
+                           FontSize="14" 
+                           Padding="10,0,10,0"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollView>
 </ContentPage>

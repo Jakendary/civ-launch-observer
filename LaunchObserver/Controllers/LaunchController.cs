@@ -22,9 +22,9 @@ namespace LaunchObserver.Controllers
             return _apiService.GetUpcomingLaunchesAsync();
         }
 
-        public Task<Launch> GetLaunchDetailsAsync(string launch_id)
+        public async Task<Launch> GetLaunchDetailsAsync(string launchId)
         {
-            return _apiService.GetLaunchDetailsAsync(launch_id);
+            return await _apiService.GetLaunchDetailsAsync(launchId);
         }
     }
 }

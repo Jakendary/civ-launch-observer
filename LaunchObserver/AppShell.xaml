@@ -24,7 +24,4 @@
         </Tab>
     </TabBar>
     
-    <ShellContent Title="Details"
-        ContentTemplate="{DataTemplate views:DetailsPage}"
-        Route="DetailsPage" />
 </Shell>

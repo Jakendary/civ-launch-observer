@@ -93,7 +93,7 @@ namespace LaunchObserver.Services
 
             var launch = JsonConvert.DeserializeObject<Launch>(responseString);
 
-            return launch;
+            return launch ?? new Launch();
         }
     }
 }
