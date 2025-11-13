@@ -32,7 +32,10 @@
                     <Image Grid.Row="0" 
                            x:Name="NextLaunchImage" 
                            Source="launch_placeholder_image.png" 
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center"
+                           HeightRequest="230"
+                           WidthRequest="350"
+                           Aspect="AspectFill"/>
                     <Label Grid.Row="1" 
                            x:Name="NextLaunchName" 
                            Text="" FontSize="22" 
