@@ -63,7 +63,6 @@ packages/
 # WPF-specific files
 *.g.cs
 *.g.i.cs
-*.xaml.cs
 obj/**/*.g.cs
 obj/**/*.g.i.cs
 
