@@ -16,7 +16,10 @@
                     <Image Grid.Row="0" 
                            x:Name="SelectedLaunchImage" 
                            Source="launch_placeholder_image.png" 
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center"
+                           HeightRequest="230"
+                           WidthRequest="360"
+                           Aspect="AspectFill"/>
 
                     <Label Grid.Row="1" 
                            x:Name="SelectedLaunchName" 

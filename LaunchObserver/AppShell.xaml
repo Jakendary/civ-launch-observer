@@ -7,17 +7,17 @@
     Title="LaunchObserver">
 
     <TabBar>
-        <Tab Title="Home" Icon="dotnet_bot.png">
+        <Tab Title="Home" Icon="home_icon.png">
             <ShellContent
             ContentTemplate="{DataTemplate views:MainPage}"
             Route="MainPage" />
         </Tab>
-        <Tab Title="Launches" Icon="dotnet_bot.png">
+        <Tab Title="Launches" Icon="launches_icon.png">
             <ShellContent
             ContentTemplate="{DataTemplate views:LaunchesPage}"
             Route="LaunchesPage" />
         </Tab>
-        <Tab Title="Settings" Icon="dotnet_bot.png">
+        <Tab Title="Settings" Icon="settings_icon.png">
             <ShellContent
             ContentTemplate="{DataTemplate views:SettingsPage}"
             Route="SettingsPage" />
