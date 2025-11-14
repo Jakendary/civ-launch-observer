@@ -24,6 +24,7 @@ public partial class MainPage : ContentPage
         if (!launch.LaunchDate.HasValue)
         {
             NextLaunchCountdown.Text = "T-00:00:00";
+            NextLaunchCountdown_Big.Text = "T-00:00:00";
         }
 
         DateTime launchTime = launch.LaunchDate.Value;
@@ -35,10 +36,12 @@ public partial class MainPage : ContentPage
             if (timeRemaining <= TimeSpan.Zero)
             {
                 NextLaunchCountdown.Text = $"T+{timeRemaining:hh\\:mm\\:ss}";
+                NextLaunchCountdown_Big.Text = $"T+{timeRemaining:hh\\:mm\\:ss}";
             }
             else
             {
                 NextLaunchCountdown.Text = $"T-{timeRemaining:hh\\:mm\\:ss}";
+                NextLaunchCountdown_Big.Text = $"T-{timeRemaining:hh\\:mm\\:ss}";
             }
             await Task.Delay(1000);
         }

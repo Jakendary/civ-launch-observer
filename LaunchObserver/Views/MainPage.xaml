@@ -3,8 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LaunchObserver.Views.MainPage">
 
-    <Grid RowDefinitions="10*,62*">
-        
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- PORTRAIT ORIENTATION STYLE -->
+            <Style TargetType="Grid" x:Key="PortraitStyle">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Portrait">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Portrait" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="IsVisible" Value="True" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Landscape">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Landscape" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="IsVisible" Value="False" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- LANDSCAPE ORIENTATION STYLE -->
+            <Style TargetType="Grid" x:Key="LandscapeStyle">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Portrait">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Portrait" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="IsVisible" Value="False" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Landscape">
+                                <VisualState.StateTriggers>
+                                    <OrientationStateTrigger Orientation="Landscape" />
+                                </VisualState.StateTriggers>
+                                <VisualState.Setters>
+                                    <Setter Property="IsVisible" Value="True" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid RowDefinitions="10*,62*" Style="{StaticResource PortraitStyle}">
+
         <!-- HEADER BAR -->
         <Grid x:Name="Header" Grid.Row="0" BackgroundColor="Blue">
             <Image Source="launchobserver_logo.png" 
@@ -22,7 +78,7 @@
                        Margin="25,50,25,10" 
                        FontSize="18" 
                        FontAttributes="Bold,Italic"/>
-                
+
                 <!-- LAUNCH INFO CARD -->
                 <Border Grid.Row="1" 
                         BackgroundColor="White" 
@@ -32,34 +88,34 @@
                         Padding="0,0,0,25"
                         HorizontalOptions="Center">
 
-                        <Grid RowDefinitions="Auto, Auto, Auto, Auto">
-                            <Image Grid.Row="0" 
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+                        <Image Grid.Row="0" 
                                    x:Name="NextLaunchImage" 
                                    Source="launch_placeholder_image.png"
                                    HeightRequest="230"
                                    WidthRequest="350"
                                    Aspect="AspectFill"/>
-                            <Label Grid.Row="1" 
+                        <Label Grid.Row="1" 
                                    x:Name="NextLaunchName" 
                                    Text="" FontSize="22" 
                                    Padding="10,10,10,0" 
                                    HorizontalOptions="Center" 
                                    FontAttributes="Bold"/>
-                            <Label Grid.Row="2" 
+                        <Label Grid.Row="2" 
                                    x:Name="NextLaunchTime" 
                                    Text="No launch found, please try again later." 
                                    FontSize="18" 
                                    Padding="10,0,10,0" 
                                    HorizontalOptions="Center"/>
-                            <Label Grid.Row="3" 
+                        <Label Grid.Row="3" 
                                    x:Name="NextLaunchStatus" 
                                    Text="" FontSize="22" 
                                    Padding="10,25,10,0" 
                                    HorizontalOptions="Center" 
                                    FontAttributes="Bold" 
                                    TextColor="Green"/>
-                        </Grid>
-                    </Border>
+                    </Grid>
+                </Border>
 
                 <!-- COUNTDOWN CARD -->
                 <Border x:Name="CountdownCard" Grid.Row="2" 
@@ -68,14 +124,25 @@
                         StrokeThickness="2" 
                         Margin="25,60,25,40"
                         Padding="20">
-                        <Label x:Name="NextLaunchCountdown"
+                    <Label x:Name="NextLaunchCountdown"
                                Text="T-00:00:00" 
                                FontSize="46" 
                                HorizontalTextAlignment="Center" 
                                VerticalTextAlignment="Center"/>
                 </Border>
-                
+
             </Grid>
+        </Grid>
+    </Grid>
+
+        <Grid x:Name="CountDownCard_Big" BackgroundColor="Black" 
+              Style="{StaticResource LandscapeStyle}">
+            <Label x:Name="NextLaunchCountdown_Big"
+                   Text="T-00:00:00" 
+                   FontSize="100" 
+                   TextColor="LightGray"
+                   HorizontalTextAlignment="Center" 
+                   VerticalTextAlignment="Center"/>
         </Grid>
     </Grid>
 </ContentPage>
