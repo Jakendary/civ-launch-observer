@@ -58,6 +58,7 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <Grid>
         <Grid RowDefinitions="10*,62*" Style="{StaticResource PortraitStyle}">
 
@@ -70,7 +71,7 @@
         </Grid>
 
         <!-- MAIN CONTENT AREA -->
-        <Grid Grid.Row="1" x:Name="ContentArea" BackgroundColor="LightGrey">
+        <Grid Grid.Row="1" x:Name="ContentArea" Style="{StaticResource ContentBackground}">
             <Grid RowDefinitions="Auto,Auto,Auto">
                 <Label Grid.Row="0" 
                        Text="Next Launch:" 
@@ -80,9 +81,7 @@
                        FontAttributes="Bold,Italic"/>
 
                 <!-- LAUNCH INFO CARD -->
-                <Border Grid.Row="1" 
-                        BackgroundColor="White" 
-                        Stroke="Black" 
+                <Border Grid.Row="1" Style="{StaticResource CardStyle}"
                         StrokeThickness="2" 
                         Margin="25,0,25,20"
                         Padding="0,0,0,25"
@@ -119,8 +118,7 @@
 
                 <!-- COUNTDOWN CARD -->
                 <Border x:Name="CountdownCard" Grid.Row="2" 
-                        BackgroundColor="White" 
-                        Stroke="Black" 
+                        Style="{StaticResource CardStyle}"
                         StrokeThickness="2" 
                         Margin="25,60,25,40"
                         Padding="20">
@@ -135,9 +133,9 @@
         </Grid>
     </Grid>
 
-        <Grid x:Name="CountDownCard_Big" BackgroundColor="Black" 
+        <Grid x:Name="CountDownCardBig" BackgroundColor="Black" 
               Style="{StaticResource LandscapeStyle}">
-            <Label x:Name="NextLaunchCountdown_Big"
+            <Label x:Name="NextLaunchCountdownBig"
                    Text="T-00:00:00" 
                    FontSize="100" 
                    TextColor="LightGray"

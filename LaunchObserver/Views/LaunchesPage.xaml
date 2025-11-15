@@ -11,24 +11,22 @@
                    HeightRequest="70"/>
         </Grid>
 
-        <Grid Grid.Row="1" BackgroundColor="LightGrey">
-            <Label Grid.Row="1" 
-                   Text="Upcoming Launches:" 
+        <Grid Grid.Row="1" Style="{StaticResource ContentBackground}">
+            <Label Text="Upcoming Launches:" 
                    VerticalOptions="End" 
-                   Margin="15,0,25,10" 
+                   Margin="15,0,15,10" 
                    FontSize="18" 
                    FontAttributes="Bold,Italic"/>
         </Grid>
 
         <CollectionView Grid.Row="2" x:Name="LaunchList" 
                         ItemsSource="{Binding UpcomingLaunches}" 
-                        BackgroundColor="LightGrey">
+                        Style="{StaticResource ContentBackground}">
             
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="10,0,10,0" ColumnDefinitions="*" Padding="10,0,10,10">
-                        <Border BackgroundColor="White" 
-                                Stroke="Black" 
+                    <Grid Margin="5,0,5,0" ColumnDefinitions="*" Padding="10,0,10,5">
+                        <Border Style="{StaticResource CardStyle}" 
                                 StrokeThickness="2">
 
 							<Border.GestureRecognizers>

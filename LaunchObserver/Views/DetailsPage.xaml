@@ -4,10 +4,8 @@
              x:Class="LaunchObserver.Views.DetailsPage">
 
     <ScrollView>
-        <Grid BackgroundColor="LightGrey">
-            <Border Grid.Row="1" 
-                    BackgroundColor="White" 
-                    Stroke="Black" 
+        <Grid Style="{StaticResource ContentBackground}">
+            <Border Style="{StaticResource CardStyle}"
                     StrokeThickness="2" 
                     Margin="25,20,25,20"
                     HorizontalOptions="Center">
