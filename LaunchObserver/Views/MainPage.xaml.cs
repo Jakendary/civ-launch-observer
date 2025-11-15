@@ -1,4 +1,5 @@
 ﻿using LaunchObserver.Controllers;
+using LaunchObserver.Services;
 
 namespace LaunchObserver.Views;
 
@@ -10,6 +11,11 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         _launchController = launchController;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
         LoadNextLaunch();
     }
 
@@ -18,7 +24,16 @@ public partial class MainPage : ContentPage
         var launch = await _launchController.GetNextLaunchAsync();
         NextLaunchImage.Source = new UriImageSource { Uri = new Uri(launch.Image.ImageUrl) };
         NextLaunchName.Text = $"{launch.Mission.Name}";
-        NextLaunchTime.Text = $"{launch.LaunchDate}";
+
+        if (AppPreferences.TimeFormat == "TwelveHour")
+        {
+            NextLaunchTime.Text = $"{launch.LaunchDate}";
+        }
+        else
+        {
+            NextLaunchTime.Text = launch.LaunchDate.Value.ToString("M/d/yyyy HH:mm");
+        }
+        
         NextLaunchStatus.Text = $"Status: {launch.Status.Short}";
 
         if (!launch.LaunchDate.HasValue)

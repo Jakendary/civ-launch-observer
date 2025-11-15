@@ -17,27 +17,35 @@
                     StrokeThickness="2" 
                     Margin="25,20,25,20">
 
-                <Grid RowDefinitions="Auto, Auto, Auto"
+                <Grid RowDefinitions="Auto, Auto, Auto, 20*"
                       ColumnDefinitions="Auto,Auto">
                     <Label Grid.Row="0" Grid.Column="0"
                            x:Name="SettingsCard" 
                            Text="Settings" FontSize="22" 
-                           Padding="10,10,10,0" 
+                           Padding="10" 
                            FontAttributes="Bold"/>
+                    
                     <Label Grid.Row="1" Grid.Column="0" 
-                           Text="Enable Dark Mode" FontSize="16" 
-                           Padding="10,30,10,0" 
-                           FontAttributes="Bold"/>
-                    <Switch x:Name="DarkModeSwitch" 
-                            Grid.Row="1" Grid.Column="1"
-                            Margin="5,17,0,0"/>
-                    <Label Grid.Row="2" Grid.Column="0" 
-                           Text="Enable 24hr Times" FontSize="16" 
+                           Text="Switch to 24hr Times" FontSize="16" 
                            Padding="10,20,10,0" 
                            FontAttributes="Bold"/>
                     <Switch x:Name="TwentyFourHourSwitch" 
+                            Grid.Row="1" Grid.Column="1"
+                            Margin="5,7,0,0"
+                            Toggled="TwentyFourHourSwitch_OnToggled"/>
+                    
+                    <Label Grid.Row="2" Grid.Column="0" 
+                           Text="Switch to Imperial units" FontSize="16" 
+                           Padding="10,20,10,0" 
+                           FontAttributes="Bold"/>
+                    <Switch x:Name="UnitsTypeSwitch" 
                             Grid.Row="2" Grid.Column="1"
                             Margin="5,7,0,0"/>
+                    
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="LaunchObserver by J093209"
+                           VerticalOptions="End"
+                           Margin="5" FontAttributes="Italic"/>
                 </Grid>
             </Border>
         </Grid>
