@@ -4,8 +4,6 @@ namespace LaunchObserver.Views;
 
 public partial class DetailsPage : ContentPage
 {
-    private readonly string launchId;
-
     public DetailsPage(Launch launch)
     {
         InitializeComponent();
