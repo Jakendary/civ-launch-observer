@@ -20,7 +20,7 @@ namespace LaunchObserver.Services
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException("Error");
+                return new Launch();
             }
 
             string responseString = await response.Content.ReadAsStringAsync();
@@ -42,7 +42,7 @@ namespace LaunchObserver.Services
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException("Error");
+                return new List<Launch>();
             }
 
             string responseString = await response.Content.ReadAsStringAsync();
@@ -64,7 +64,7 @@ namespace LaunchObserver.Services
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException("Error");
+                return new List<Launch>();
             }
 
             string responseString = await response.Content.ReadAsStringAsync();
@@ -86,7 +86,7 @@ namespace LaunchObserver.Services
 
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                throw new HttpRequestException("Error");
+                return new Launch();
             }
 
             string responseString = await response.Content.ReadAsStringAsync();

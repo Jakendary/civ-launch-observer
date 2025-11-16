@@ -10,7 +10,7 @@ public partial class DetailsPage : ContentPage
         LoadLaunchDetails(launch);
     }
 
-    private async Task LoadLaunchDetails(Launch launch)
+    private void LoadLaunchDetails(Launch launch)
     {
         SelectedLaunchImage.Source = new UriImageSource { Uri = new Uri(launch.Image.ImageUrl) };
         SelectedLaunchName.Text = launch.Mission.Name;

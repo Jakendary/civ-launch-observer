@@ -20,7 +20,6 @@ public partial class LaunchesPage : ContentPage
 	{
 		var launches = await _launchController.GetUpcomingLaunchesAsync();
 		UpcomingLaunches = new List<Launch>(launches);
-		LaunchList.ItemsSource = null;
 		LaunchList.ItemsSource = UpcomingLaunches;
 	}
 
