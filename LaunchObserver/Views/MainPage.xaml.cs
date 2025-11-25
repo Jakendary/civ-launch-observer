@@ -29,7 +29,7 @@ public partial class MainPage : ContentPage
 
             if (AppPreferences.TimeFormat == "TwelveHour")
             {
-                NextLaunchTime.Text = $"{launch.LaunchDate}";
+                NextLaunchTime.Text = launch.LaunchDate.Value.ToString("M/d/yyyy h:mm tt");
             }
             else
             {
