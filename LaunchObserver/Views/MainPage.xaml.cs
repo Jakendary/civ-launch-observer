@@ -49,17 +49,11 @@ public partial class MainPage : ContentPage
             while (true)
             {
                 TimeSpan timeRemaining = launchTime - DateTime.Now;
-
-                if (timeRemaining <= TimeSpan.Zero)
-                {
-                    NextLaunchCountdown.Text = $"T+{timeRemaining:hh\\:mm\\:ss}";
-                    NextLaunchCountdownBig.Text = $"T+{timeRemaining:hh\\:mm\\:ss}";
-                }
-                else
-                {
-                    NextLaunchCountdown.Text = $"T-{timeRemaining:hh\\:mm\\:ss}";
-                    NextLaunchCountdownBig.Text = $"T-{timeRemaining:hh\\:mm\\:ss}";
-                }
+                var prefix = timeRemaining.TotalSeconds >= 0 ? "T-" : "T+";
+                
+                NextLaunchCountdown.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
+                NextLaunchCountdownBig.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
+                
                 await Task.Delay(1000);
             }
         }
