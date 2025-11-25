@@ -43,18 +43,20 @@ public partial class MainPage : ContentPage
                 NextLaunchCountdown.Text = "T-00:00:00";
                 NextLaunchCountdownBig.Text = "T-00:00:00";
             }
-
-            DateTime launchTime = launch.LaunchDate.Value;
-
-            while (true)
+            else
             {
-                TimeSpan timeRemaining = launchTime - DateTime.Now;
-                var prefix = timeRemaining.TotalSeconds >= 0 ? "T-" : "T+";
+                DateTime launchTime = launch.LaunchDate.Value;
+
+                while (true)
+                {
+                    TimeSpan timeRemaining = launchTime - DateTime.Now;
+                    var prefix = timeRemaining.TotalSeconds >= 0 ? "T-" : "T+";
                 
-                NextLaunchCountdown.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
-                NextLaunchCountdownBig.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
+                    NextLaunchCountdown.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
+                    NextLaunchCountdownBig.Text = $"{prefix}{timeRemaining:hh\\:mm\\:ss}";
                 
-                await Task.Delay(1000);
+                    await Task.Delay(1000);
+                }
             }
         }
         catch
