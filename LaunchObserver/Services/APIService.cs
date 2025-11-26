@@ -1,6 +1,7 @@
 ﻿using LaunchObserver.Models;
 using Newtonsoft.Json;
 using System.Net;
+using AndroidX.Activity;
 
 namespace LaunchObserver.Services
 {
@@ -52,7 +53,8 @@ namespace LaunchObserver.Services
             return responseData?.Results ?? new List<Launch>();
         }
 
-        public async Task<List<Launch>> GetPreviousLaunchesAsync()
+        // TODO: Implement 'previous launches' launch list functionality on Launches page.        
+        /*public async Task<List<Launch>> GetPreviousLaunchesAsync()
         {
             string url = $"{base_url}launches/previous/";
 
@@ -72,7 +74,7 @@ namespace LaunchObserver.Services
             var responseData = JsonConvert.DeserializeObject<Launch.LaunchResponse>(responseString);
 
             return responseData?.Results ?? new List<Launch>();
-        }
+        }*/
 
         public async Task<Launch> GetLaunchDetailsAsync(string launch_id)
         {
