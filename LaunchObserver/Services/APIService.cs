@@ -1,7 +1,6 @@
 ﻿using LaunchObserver.Models;
 using Newtonsoft.Json;
 using System.Net;
-using AndroidX.Activity;
 
 namespace LaunchObserver.Services
 {
