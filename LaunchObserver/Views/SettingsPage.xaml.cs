@@ -11,13 +11,6 @@ public partial class SettingsPage : ContentPage
 
 	private void TwentyFourHourSwitch_OnToggled(object? sender, ToggledEventArgs e)
 	{
-		if (TwentyFourHourSwitch.IsToggled)
-		{
-			AppPreferences.TimeFormat = "TwentyFourHour";
-		}
-		else
-		{
-			AppPreferences.TimeFormat = "TwelveHour";
-		}
+		AppPreferences.TimeFormat = !TwentyFourHourSwitch.IsToggled ? "TwelveHour" : "TwentyFourHour";
 	}
 }

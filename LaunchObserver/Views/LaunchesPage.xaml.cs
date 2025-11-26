@@ -25,7 +25,7 @@ public partial class LaunchesPage : ContentPage
 
 	private async void LaunchCardTapped(object sender, EventArgs e)
 	{
-		if (sender is Border border && border.BindingContext is Launch selectedLaunch)
+		if (sender is Border { BindingContext: Launch selectedLaunch })
 		{
 			await Navigation.PushAsync(new DetailsPage(selectedLaunch));
         }
