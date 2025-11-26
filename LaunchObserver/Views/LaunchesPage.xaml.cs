@@ -23,11 +23,11 @@ public partial class LaunchesPage : ContentPage
 		LaunchList.ItemsSource = UpcomingLaunches;
 	}
 
-	private async void LaunchCardTapped(object sender, EventArgs e)
+	private void LaunchCardTapped(object sender, EventArgs e)
 	{
 		if (sender is Border { BindingContext: Launch selectedLaunch })
 		{
-			await Navigation.PushAsync(new DetailsPage(selectedLaunch));
+			Navigation.PushAsync(new DetailsPage(selectedLaunch));
         }
 	}
 }
