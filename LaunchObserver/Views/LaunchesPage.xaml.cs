@@ -18,8 +18,7 @@ public partial class LaunchesPage : ContentPage
 
 	private async Task LoadUpcomingLaunchesAsync()
 	{
-		var launches = await _launchController.GetUpcomingLaunchesAsync();
-		UpcomingLaunches = new List<Launch>(launches);
+		UpcomingLaunches = await _launchController.GetUpcomingLaunchesAsync();
 		LaunchList.ItemsSource = UpcomingLaunches;
 	}
 
